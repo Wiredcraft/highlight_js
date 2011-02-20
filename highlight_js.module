@@ -1,0 +1,54 @@
+<?php
+/**
+ * Preprocessor that runs *before* template_preprocess_page().
+ */
+function highlight_js_page_build(&$page) {
+  $path = drupal_get_path('module', 'highlight_js');
+  $theme = variable_get('highlight_js_theme', 'default');
+
+
+  // Loads from Yandex or from local depending on the settings.
+  if (variable_get('highlight_js_use_online', 1)) {
+    drupal_add_js('http://yandex.st/highlightjs/5.16/highlight.min.js');
+    if (!empty($theme)) drupal_add_css('http://yandex.st/highlightjs/5.16/styles/'. $theme .'.min.css', array('type' => 'external'));
+  }
+  else {
+    drupal_add_js($path .'/highlight/highlight.pack.js');
+    if (!empty($theme)) drupal_add_css($path .'/highlight/styles/'. $theme .'.css');
+  }
+
+  // If we're loading a custom theme
+  $custom = variable_get('highlight_js_theme_path', '');
+  if (empty($theme) && !empty($custom)) drupal_add_css($custom);
+
+  drupal_add_js($path .'/highlight.js');
+}
+
+/**
+ * Implements hook_menu().
+ */
+function highlight_js_menu() {
+  $items['admin/config/content/highlight_js'] = array(
+    'title' => 'Highlight.js',
+    'description' => 'Configure highlight.js library\'s integration.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('highlight_js_settings_form'),
+    'access arguments' => array('administer highlight.js'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'highlight_js.admin.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function highlight_js_permission() {
+  return array(
+    'administer google analytics' => array(
+      'title' => t('Administer Google Analytics'),
+      'description' => t('Perform maintenance tasks for Google Analytics.'),
+    ),
+  );
+}
