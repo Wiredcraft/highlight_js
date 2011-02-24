@@ -1,7 +1,6 @@
 (function($) {
 
-Drupal.behaviors.highlightJS = {};
-Drupal.behaviors.highlightJS.attach = function(context) {
+Drupal.behaviors.highlightJS = function(context) {
   hljs.initHighlightingOnLoad();
 };
 
