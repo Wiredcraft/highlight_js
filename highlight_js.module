@@ -1,8 +1,9 @@
 <?php
 /**
- * Preprocessor that runs *before* template_preprocess_page().
+ * Implementation of hook_init()
+ * This is the recommended place to add js/css to be used on all pages
  */
-function highlight_js_page_build(&$page) {
+function highlight_js_init() {
   $path = drupal_get_path('module', 'highlight_js');
   $theme = variable_get('highlight_js_theme', 'default');
 
