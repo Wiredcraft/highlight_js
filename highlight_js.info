@@ -2,8 +2,4 @@
 name = highlight.js
 description = Wrapper for integrating highlight.js into Drupal.
 package = Other
-core = 7.x
-
-configure = admin/config/content/highlight_js
-files[] = highlight_js.module
-files[] = highlight_js.admin.inc
+core = 6.x
