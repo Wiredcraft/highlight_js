@@ -29,7 +29,7 @@ function highlight_js_init() {
  * Implements hook_menu().
  */
 function highlight_js_menu() {
-  $items['admin/config/content/highlight_js'] = array(
+  $items['admin/settings/highlight_js'] = array(
     'title' => 'Highlight.js',
     'description' => 'Configure highlight.js library\'s integration.',
     'page callback' => 'drupal_get_form',
@@ -37,6 +37,7 @@ function highlight_js_menu() {
     'access arguments' => array('administer highlight.js'),
     'type' => MENU_NORMAL_ITEM,
     'file' => 'highlight_js.admin.inc',
+  	'file_path' => drupal_get_path('module', 'highlight_js')
   );
 
   return $items;
