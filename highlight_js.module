@@ -43,13 +43,10 @@ function highlight_js_menu() {
 }
 
 /**
- * Implements hook_permission().
+ * Implements hook_perm().
  */
-function highlight_js_permission() {
+function highlight_js_perm() {
   return array(
-    'administer google analytics' => array(
-      'title' => t('Administer Google Analytics'),
-      'description' => t('Perform maintenance tasks for Google Analytics.'),
-    ),
+    'administer highlight.js'
   );
 }
