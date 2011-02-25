@@ -1,0 +1,21 @@
+<?php
+/**
+ * @file
+ * Install/uninstall functions for the highlight.js module.
+ */
+
+/**
+ * Implementation of hook_install()
+ */
+function highlight_js_install() {
+  drupal_set_message(t('Highlight.js successfully installed. Go to the '.l('administration page', 'admin/settings/highlight_js').' to configure it'));
+}
+
+/**
+ * Implementation of hook_uninstall()
+ * Clean up all our variables. It is only nice
+ */
+function highlight_js_uninstall() {
+  db_query('DELETE FROM {variable} WHERE name LIKE "%highlight_js%";');
+  cache_clear_all('variables', 'cache');
+}

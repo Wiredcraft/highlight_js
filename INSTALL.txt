@@ -1,0 +1,48 @@
+INSTALL
+-------
+
+1. Place the entire highlight_js directory into your modules directory
+   (sites/all/modules is the usual location).
+2. Go to Administer > Site building > Modules and enable the highlight.js module.
+
+If you choose to serve the library from your server:
+3. Create a new folder for the highlight.js library at:
+     cd YOUR-DRUPAL-ROOT
+     mkdir -p sites/all/libraries/highlight
+4. Go tohttp://softwaremaniacs.org/soft/highlight/en/download/ and download the 
+   suggested version (take the file from the line that looks like
+   <script src="http://yandex.st/highlightjs/5.16/highlight.min.js"></script>)
+   
+     cd sites/all/libraries/highlight
+     wget "http://yandex.st/highlightjs/5.16/highlight.min.js"
+
+If you would like to use the available themes:
+5. Create a new folder `styles` in `sites/all/libraries/highlight`:
+   if you are not in the previously created highlight folder:
+    cd YOUR-DRUPAL-ROOT/sites/all/libraries/highlight
+   else:
+    mkdir styles
+    
+6. Download 
+http://softwaremaniacs.org/media/soft/highlight/default.css
+http://softwaremaniacs.org/media/soft/highlight/dark.css
+http://softwaremaniacs.org/media/soft/highlight/far.css
+http://softwaremaniacs.org/media/soft/highlight/idea.css
+http://softwaremaniacs.org/media/soft/highlight/sunburst.css
+http://softwaremaniacs.org/media/soft/highlight/zenburn.css
+http://softwaremaniacs.org/media/soft/highlight/vs.css
+http://softwaremaniacs.org/media/soft/highlight/ascetic.css
+http://softwaremaniacs.org/media/soft/highlight/magula.css
+http://softwaremaniacs.org/media/soft/highlight/github.css
+http://softwaremaniacs.org/media/soft/highlight/brown_paper.css
+http://softwaremaniacs.org/media/soft/highlight/brown_paper.png
+http://softwaremaniacs.org/media/soft/highlight/school_book.css
+http://softwaremaniacs.org/media/soft/highlight/school_book.png
+http://softwaremaniacs.org/media/soft/highlight/ir_black.css
+
+* Go to Administer > Settings > Highlight.js to configure the highlight theme 
+  or change whether the module should use the highlight.js library CDN or local 
+   files
+
+Sit back and enjoy!
+
