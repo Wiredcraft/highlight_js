@@ -53,3 +53,7 @@ function highlight_js_perm() {
     'administer highlight.js'
   );
 }
+
+function highlight_js_get_path() {
+	return variable_get('highlight_js_library_path', 'sites/all/libraries/highlight');
+}
