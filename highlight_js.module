@@ -16,8 +16,9 @@ function highlight_js_init() {
     }
   }
   else {
-    drupal_add_js($path .'/highlight/highlight.min.js');
-    if (!empty($theme)) drupal_add_css($path .'/highlight/styles/'. $theme .'.css');
+    $library = highlight_js_get_path();
+    drupal_add_js($library .'/highlight.min.js');
+    if (!empty($theme)) drupal_add_css($library .'/styles/'. $theme .'.css');
   }
 
   // If we're loading a custom theme
