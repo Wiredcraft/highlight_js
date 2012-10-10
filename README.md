@@ -18,3 +18,7 @@ There are already plenty of other solutions already available to highlight code 
 # Maintainer
 
 - hunvreus (Ronan Berder), from Wiredcraft (http://wiredcraft.com)
+
+# Drupal 6 port
+
+- zerolab (Dan Braghis), http://zerolab.org
