@@ -9,8 +9,8 @@ function highlight_js_page_build(&$page) {
 
   // Loads from Yandex or from local depending on the settings.
   if (variable_get('highlight_js_use_online', 1)) {
-    drupal_add_js('http://yandex.st/highlightjs/5.16/highlight.min.js');
-    if (!empty($theme)) drupal_add_css('http://yandex.st/highlightjs/5.16/styles/'. $theme .'.min.css', array('type' => 'external'));
+    drupal_add_js('http://yandex.st/highlightjs/7.0/highlight.min.js');
+    if (!empty($theme)) drupal_add_css('http://yandex.st/highlightjs/7.0/styles/'. $theme .'.min.css', array('type' => 'external'));
   }
   else {
     drupal_add_js($path .'/highlight/highlight.pack.js');
